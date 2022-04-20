@@ -5,6 +5,13 @@
 const std::string GAME_TITLE = "CPP Fishing";
 const std::string GAME_VERSION = "0.1";
 
+std::string mainMenuPrompts[4] = {
+  "Go fishing",
+  "Stats",
+  "Shop",
+  "Quit"
+};
+
 void clearScreen()
 {
   system("clear");
@@ -12,13 +19,22 @@ void clearScreen()
 
 void printTitle()
 {
-  std::cout << GAME_TITLE << " " << GAME_VERSION << std::endl;
+  std::cout << GAME_TITLE << " " << GAME_VERSION << "\n\n";
+}
+
+void printMenu(std::string prompts[4])
+{
+  for (int i = 0; i < 4; i++)
+  {
+    std::cout << i + 1 << ") " << prompts[i] << '\n';
+  }
 }
 
 int mainMenu()
 {
   clearScreen();
   printTitle();
+  printMenu(mainMenuPrompts);
   return 1;
 }
 

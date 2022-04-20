@@ -1,11 +1,12 @@
 #include <iostream>
 #include <stdlib.h>
+#include <vector>
 #include <string>
 
 const std::string GAME_TITLE = "CPP Fishing";
 const std::string GAME_VERSION = "0.1";
 
-std::string mainMenuPrompts[4] = {
+std::vector<std::string> mainMenuPrompts = {
   "Go fishing",
   "Stats",
   "Shop",
@@ -22,9 +23,9 @@ void printTitle()
   std::cout << GAME_TITLE << " " << GAME_VERSION << "\n\n";
 }
 
-void printMenu(std::string prompts[4])
+void printMenu(std::vector<std::string> prompts)
 {
-  for (int i = 0; i < 4; i++)
+  for (int i = 0; i < prompts.size(); i++)
   {
     std::cout << i + 1 << ") " << prompts[i] << '\n';
   }
@@ -34,8 +35,12 @@ void printMenu(std::string prompts[4])
 int getChoice(int max)
 {
   int choice = 0;
-  std::cout << ">> ";
-  std::cin >> choice;
+
+  while (choice <= 0 || choice > max)
+  {
+    std::cout << ">> ";
+    std::cin >> choice;
+  }
 
   return choice;
 }
@@ -45,7 +50,7 @@ int mainMenu()
   clearScreen();
   printTitle();
   printMenu(mainMenuPrompts);
-  int choice = getChoice(4);
+  int choice = getChoice(mainMenuPrompts.size());
   return choice;
 }
 

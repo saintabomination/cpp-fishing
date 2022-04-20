@@ -28,6 +28,16 @@ void printMenu(std::string prompts[4])
   {
     std::cout << i + 1 << ") " << prompts[i] << '\n';
   }
+  std::cout << '\n';
+}
+
+int getChoice(int max)
+{
+  int choice = 0;
+  std::cout << ">> ";
+  std::cin >> choice;
+
+  return choice;
 }
 
 int mainMenu()
@@ -35,7 +45,8 @@ int mainMenu()
   clearScreen();
   printTitle();
   printMenu(mainMenuPrompts);
-  return 1;
+  int choice = getChoice(4);
+  return choice;
 }
 
 int main()

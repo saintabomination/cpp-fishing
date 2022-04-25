@@ -7,6 +7,7 @@ class Menus {
   public:
     // Functions
     static void mainMenu();
+    static void statsMenu();
 };
 
 #endif // MENUS_H

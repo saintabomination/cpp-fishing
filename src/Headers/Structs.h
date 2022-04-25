@@ -14,7 +14,13 @@ struct Fish {
 };
 
 struct Player {
+  std::string name;
   int money;
+
+  Player (std::string name)
+  {
+    this->name = name;
+  }
 };
 
 #endif // STRUCTS_H

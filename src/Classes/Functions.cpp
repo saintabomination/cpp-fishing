@@ -31,3 +31,10 @@ int getChoice(int max)
 
   return choice;
 }
+
+void getEnter()
+{
+  std::cout << "Press ENTER to continue.\n";
+  std::cin.get();
+  std::cin.get();
+}

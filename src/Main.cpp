@@ -2,9 +2,10 @@
 #include "Headers/Structs.h"
 #include "Headers/Menus.h"
 
+Player player("Player Name");
+
 int main()
 {
-  Player player;
   Menus::mainMenu();
 
   return 0;

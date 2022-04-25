@@ -1,5 +1,6 @@
 #include "Headers.h"
 #include "Headers/Functions.h"
+#include "Headers/Structs.h"
 
 std::vector<std::string> mainMenuPrompts = {
   "Go fishing",
@@ -10,6 +11,8 @@ std::vector<std::string> mainMenuPrompts = {
 
 int mainMenu()
 {
+  Player player;
+
   clearScreen();
   printTitle();
   printMenu(mainMenuPrompts);

@@ -32,9 +32,9 @@ int getChoice(int max)
   return choice;
 }
 
-void getEnter()
+void getEnter(std::string action)
 {
-  std::cout << "Press ENTER to continue.\n";
+  std::cout << "Press ENTER to " << action << ".\n";
   std::cin.get();
   std::cin.get();
 }

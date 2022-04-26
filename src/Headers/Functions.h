@@ -9,6 +9,6 @@ void clearScreen();
 void printTitle();
 void printMenu(std::vector<std::string> prompts);
 int getChoice(int max);
-void getEnter();
+void getEnter(std::string action);
 
 #endif // FUNCTIONS_H
